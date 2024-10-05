@@ -1,7 +1,9 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 from transformers import pipeline
 
 app = Flask(__name__)
+CORS(app)
 
 summarizer = pipeline("summarization", model="iamj33l/my_longer_summarization_model")
 
